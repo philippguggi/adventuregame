@@ -33,7 +33,7 @@ public class Main {
 			
 			int enemyHealth = random.nextInt(maxEnemyHealth);
 			String enemy = enemies[random.nextInt(enemies.length)];
-			System.out.println("\t#" + enemy + " has appeared! #\n");
+			System.out.println("\t# " + enemy + " has appeared! #\n");
 			
 			while (enemyHealth > 0) {
 				System.out.println("\tYour HP: " + health);
@@ -53,7 +53,7 @@ public class Main {
 					
 					System.out.println("\t> You strike the " + enemy + " for " + damageDealt + " damage.");
 					System.out.println("\t> You received " + damageTaken + " in retaliation.");
-					
+					System.out.println();
 					if (health < 1) {
 						System.out.println("\t You have taken too much damage, you are too weak to go on.");
 						break;
@@ -68,16 +68,19 @@ public class Main {
 						+ "\n\t> You now have " + numHealthPots + " health potions left.\n");
 					} else {
 						System.out.println("\t> You have no health potions, defeat enemies for a chance to get one.");
+						System.out.println();
 					}
 				} else if (input.contentEquals("3")) {
 					System.out.println("\t> You run away from the " + enemy + ".");
 					continue GAME;
 				} else {
 					System.out.println("\tInvalid command");
+					System.out.println();
 				}
 			}
 			if (health < 1) {
-				System.out.println("You limp out of the dungeon, weak from battle.");
+				System.out.println();
+				System.out.println("\t> You limp out of the dungeon, weak from battle.");
 				break;
 			}
 			System.out.println("------------------");
@@ -101,17 +104,19 @@ public class Main {
 			
 			while (!input.equals("1") && !input.equals("2")) {
 				System.out.println("invalid command");
+				System.out.println();
 				input = in.nextLine();
 			}
 			if (input.equals("1")) {
-				System.out.println("You continue your adventure.");
+				System.out.println("You continue your adventure!");
 			} else if (input.equals("2")) {
-				System.out.println("You exit the dungeon.");
+				System.out.println("You exit the dungeon!");
 				break;
 			}
 		}
-		System.out.println("###############");
-		System.out.println(" # Thanks for playing # ");
-		System.out.println("###############");
+		System.out.println();
+		System.out.println("##########################");
+		System.out.println("# Thank you for playing! #");
+		System.out.println("##########################");
 	}
 }
